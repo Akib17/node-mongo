@@ -95,4 +95,11 @@ app.post('/orderPlaced', (req, res) => {
     });
 })
 
-app.listen(4000, () => console.log('App is listening from 4000'))
+// app.listen(4000, () => console.log('App is listening from 4000'))
+
+app.set( 'port', ( process.env.PORT || 4000 ));
+
+// Start node server
+app.listen( app.get( 'port' ), function() {
+  console.log( 'Node server is running on port ' + app.get( 'port' ));
+  });
